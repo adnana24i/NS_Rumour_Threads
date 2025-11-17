@@ -1,1 +1,1 @@
-# NS_Rumour_Threads
+# Quantifying Fact-Checking Strategies and Structural Effects in Rumour Threads
