@@ -1,0 +1,20 @@
+{
+  "n_nodes": 45184,
+  "n_edges": 63638,
+  "density_directed": 3.1171434153297525e-05,
+  "density_undirected": 5.616618480502237e-05,
+  "reciprocity": 0.1981520475187781,
+  "wcc_count": 360,
+  "wcc_max": 43059,
+  "scc_count": 38483,
+  "scc_max": 2250,
+  "transitivity": 0.001965233218531445,
+  "avg_clustering": 0.04421804639359821,
+  "assortativity_degree": -0.14354773183703476,
+  "community_algo": "greedy_modularity",
+  "modularity": 0.8744568132380114,
+  "in_degree_mean": 1.4084189093484418,
+  "out_degree_mean": 1.4084189093484418,
+  "in_strength_mean": 1.8919307719546743,
+  "out_strength_mean": 1.8919307719546743
+}
