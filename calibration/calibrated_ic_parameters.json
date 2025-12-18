@@ -1,0 +1,18 @@
+{
+  "model": "Independent Cascade",
+  "time_bin_minutes": 60,
+  "n_simulations": 20,
+  "cv": "leave-one-event-out",
+  "lambdas": {
+    "false": {
+      "mean": 0.31652841781874036,
+      "std": 0.21082816291735648,
+      "n_threads": 837
+    },
+    "unverified": {
+      "mean": 0.34605517328451485,
+      "std": 0.19928664964158457,
+      "n_threads": 4526
+    }
+  }
+}
