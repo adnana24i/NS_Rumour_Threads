@@ -16,7 +16,7 @@ OUT_DIR.mkdir(exist_ok=True)
 
 TWEETS = DATA_DIR / "tweets_clean.csv"
 EDGES  = DATA_DIR / "edges_clean.csv"
-USERF  = DATA_DIR / "G_user_features.csv"
+USERF  = DATA_DIR / "G_user_features_pruned.csv"       # change to USERF  = DATA_DIR / "G_user_features_pruned.csv"
 DESC   = DATA_DIR / "thread_descriptives.csv"
 CALIB  = CALIB_DIR / "calibrated_ic_parameters.json"   # from Step 5
 
@@ -412,3 +412,4 @@ print("Saved:")
 print("  - experiments/intervention_results_per_thread.csv")
 print("  - experiments/intervention_results_aggregate.csv")
 print(">>> Step 6 COMPLETE <<<")
+
