@@ -33,6 +33,23 @@ user_edges = (
 user_edges['src_user'] = user_edges['src_user'].astype(str)
 user_edges['dst_user'] = user_edges['dst_user'].astype(str)
 
+### NEW ###
+# --- PRUNE nodes with in-degree==1 and out-degree==0 in the user→user graph ---
+# user_edges has columns: src_user, dst_user (strings), one row per interaction
+in_counts  = user_edges.groupby("dst_user").size()
+out_counts = user_edges.groupby("src_user").size()
+
+leaf_sinks = set(in_counts[in_counts == 1].index) - set(out_counts.index)
+user_edges = user_edges[
+    ~user_edges["src_user"].isin(leaf_sinks) &
+    ~user_edges["dst_user"].isin(leaf_sinks)
+].copy()
+print(f"[Step 3] Pruning: removed {len(leaf_sinks)} leaf-sink users "
+      f"→ edges now {len(user_edges):,}")
+
+# continue to build G from user_edges and compute PageRank, betweenness, communities...
+### END NEW ###
+
 # (b) directed weighted graph
 G = nx.DiGraph()
 G.add_weighted_edges_from(user_edges[['src_user','dst_user','weight']].itertuples(index=False, name=None))
